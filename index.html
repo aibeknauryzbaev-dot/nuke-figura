@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#bceefa">
+  <title>Сызықты тап! — көңілді математика ойыны</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="sky-scene" aria-hidden="true">
+    <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+    <div class="hill hill-back"></div><div class="hill hill-front"></div>
+    <div class="tree tree-left"><i></i><b></b></div><div class="tree tree-right"><i></i><b></b></div>
+  </div>
+  <main class="game-shell" id="gameShell">
+    <header class="topbar">
+      <button class="round-btn home-btn" id="homeBtn" aria-label="Бас мәзірге қайту" title="Бас мәзір">⌂</button>
+      <div class="brand"><span class="brand-mark">✦</span><span>Көңілді математика</span></div>
+      <div class="score-pill" aria-live="polite"><span class="score-star">★</span><span>ҰПАЙ</span><b id="score">0</b><small>/20</small></div>
+    </header>
+
+    <section class="screen start-screen active" id="startScreen" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>✦</span> ОЙНА · ОЙЛАН · ҮЙРЕН</div>
+        <h1 id="heroTitle">СЫЗЫҚТЫ <em>ТАП!</em></h1>
+        <p class="hero-subtitle">Нүкте мен сызықтардың түрлерін<br>бірге қайталайық!</p>
+        <button class="primary-btn" id="startBtn"><span>▶</span> ОЙЫНДЫ БАСТАУ</button>
+        <div class="hero-note"><span>★</span> 4 қызықты деңгей · 20 тапсырма</div>
+      </div>
+      <div class="hero-art" aria-label="Оқушылар мен көңілді қарындаш">
+        <div class="doodle doodle-star">✦</div><div class="doodle doodle-circle"></div><div class="doodle doodle-triangle">△</div>
+        <img class="characters" src="assets/mascots.png" alt="Қазақ баласы, қазақ қызы және көңілді сары қарындаш">
+        <div class="speech-bubble">Кеттік! <span>✦</span></div>
+      </div>
+      <div class="book-stack" aria-hidden="true"><i></i><b></b><strong></strong></div>
+    </section>
+
+    <section class="screen play-screen" id="playScreen" aria-live="polite">
+      <div class="level-heading">
+        <div class="level-chip"><span class="level-dot"></span><span id="levelLabel">1-ДЕҢГЕЙ</span></div>
+        <h2 id="levelTitle">НҮКТЕНІ ТАП!</h2>
+        <p id="taskText">Суреттердің ішінен нүктені таңда!</p>
+      </div>
+      <div class="progress-row"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><span id="progressLabel">1 / 1</span></div>
+      <div class="board" id="board" aria-label="Ойын тапсырмалары"></div>
+      <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+      <div class="mascot-tip" id="mascotTip"><span class="tip-icon">✦</span><span>Дайынсың ба? Мұқият қара!</span></div>
+      <button class="next-question-btn" id="nextQuestionBtn" hidden>КЕЛЕСІ ТАПСЫРМА <span>→</span></button>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="result-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-sparkle">✦</div><div class="trophy" aria-hidden="true">🏆</div>
+      <div class="modal-kicker" id="modalKicker">КЕРЕМЕТ ЖҰМЫС!</div>
+      <h2 id="modalTitle">ЖАРАЙСЫҢ!</h2>
+      <p id="modalText">1-деңгей аяқталды!</p>
+      <div class="modal-score"><span>★</span> <b id="modalScore">0</b><small>/20 ұпай</small></div>
+      <button class="primary-btn modal-btn" id="modalAction">КЕЛЕСІ ДЕҢГЕЙ <span>→</span></button>
+      <button class="text-btn" id="modalHome">БАС МӘЗІРГЕ</button>
+    </section>
+  </div>
+  <div class="toast-stars" id="toastStars" aria-hidden="true">✦　★　✦</div>
+</body>
+</html>
+
+
+
